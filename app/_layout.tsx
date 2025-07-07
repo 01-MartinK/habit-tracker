@@ -10,19 +10,32 @@ const _layout = () => {
       <Tabs.Screen 
         name="index"
         options={{
-          title: "Home"
+          headerTransparent: true,
+          headerTitle: "Hello, Tuesday",
+          title: "Home",
+          headerTitleStyle: {
+            fontSize: 20,
+          }
         }}
-      />
+        />
       <Tabs.Screen 
         name="reports"
         options={{
-          title: "Report"
+          headerTransparent: true,
+          title: "Report",
+          headerTitleStyle: {
+            fontSize: 20,
+          }
         }}
-      />
+        />
       <Tabs.Screen 
         name="leaderboard"
         options={{
-          title: "Leaderboard"
+          headerTransparent: true,
+          title: "Leaderboard",
+          headerTitleStyle: {
+            fontSize: 20,
+          }
         }}
       />
     </Tabs>
