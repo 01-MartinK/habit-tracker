@@ -1,6 +1,7 @@
-import TaskButton from "@/app/components/TaskButton";
 import React from "react";
 import { Text, View } from "react-native";
+import InfoBar from "./components/InfoBar";
+import TaskButton from "./components/TaskButton";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <View className="buffer" style={{ marginTop: 90 }} />
       <Text style={{ textAlign: "center" }}>30 Dec 2025</Text>
       <View style={{ padding: 24, gap: 16 }}>
+        <InfoBar />
         <TaskButton
           title="Workout"
           startTime="6:00"
