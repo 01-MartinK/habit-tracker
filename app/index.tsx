@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
+import CategoryButtons from "./components/CategoryButtons";
 import InfoBar from "./components/InfoBar";
 import TaskButton from "./components/TaskButton";
 
@@ -9,6 +10,7 @@ const Home = () => {
       <View className="buffer" style={{ marginTop: 90 }} />
       <Text style={{ textAlign: "center" }}>30 Dec 2025</Text>
       <View style={{ padding: 24, gap: 16 }}>
+        <CategoryButtons />
         <InfoBar />
         <TaskButton
           title="Workout"
