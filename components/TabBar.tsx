@@ -8,7 +8,9 @@ const TabBar = ({ state, descriptors, navigation }) => {
   return (
     <View style={styles.tabbar}>
       {state.routes.map((route, index: number) => {
+        if (route.name.includes("components")) return;
         const { options } = descriptors[route.key];
+
         const label =
           options.tabBarLabel !== undefined
             ? options.tabBarLabel

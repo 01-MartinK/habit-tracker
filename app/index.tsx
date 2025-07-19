@@ -1,4 +1,4 @@
-import TaskButton from "@/components/TaskButton";
+import TaskButton from "@/app/components/TaskButton";
 import React from "react";
 import { Text, View } from "react-native";
 
