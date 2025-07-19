@@ -2,8 +2,10 @@ import TabBar from "@/components/TabBar";
 import { Tabs } from "expo-router";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { GetDay } from "./utils/date";
 
 const _layout = () => {
+  const day = GetDay();
   return (
     <SafeAreaProvider>
       <Tabs tabBar={(props) => <TabBar {...props} />}>
@@ -11,7 +13,7 @@ const _layout = () => {
           name="index"
           options={{
             headerTransparent: true,
-            headerTitle: "Hello, Tuesday",
+            headerTitle: `Hello, ${day}`,
             title: "Home",
             headerTitleStyle: {
               fontSize: 20,

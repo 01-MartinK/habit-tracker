@@ -5,15 +5,17 @@ import CategoryButtons from "./components/CategoryButtons";
 import HabitButton from "./components/HabitButton";
 import InfoBar from "./components/InfoBar";
 import CreateHabitModal from "./components/Modals/CreateHabitModal";
+import { GetFullDate } from "./utils/date";
 
 const Home = () => {
   const [createModalVisible, setCreateModalVisibility] =
     useState<boolean>(false);
+  const date = GetFullDate();
 
   return (
     <View>
       <View className="buffer" style={{ marginTop: 90 }} />
-      <Text style={{ textAlign: "center" }}>30 Dec 2025</Text>
+      <Text style={{ textAlign: "center" }}>{date}</Text>
       <ScrollView style={{ margin: 12, height: 580 }}>
         <View style={{ padding: 12, gap: 16 }}>
           <CategoryButtons />
