@@ -10,7 +10,7 @@ interface TaskButtonProps {
   iconName: string;
 }
 
-const TaskButton = ({
+const HabitButton = ({
   title,
   time,
   startTime,
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TaskButton;
+export default HabitButton;
