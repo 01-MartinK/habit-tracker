@@ -45,7 +45,7 @@ export function GetDay() {
 
 export function GetFullDate() {
   const now = new Date();
-  const day = now.getDay();
+  const day = now.getDate();
   const month = now.getMonth();
   const year = now.getFullYear();
   return `${day} ${shortenedMonths[month]} ${year}`;

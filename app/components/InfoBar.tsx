@@ -1,10 +1,8 @@
 import { FontAwesome6 } from "@expo/vector-icons";
-import React, { useState } from "react";
+import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 const InfoBar = () => {
-  const [currentView, setCurrentView] = useState<number>(0);
-
   return (
     <Pressable style={styles.container}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
