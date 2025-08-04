@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, View } from "react-native";
 import LevelBar from "./components/LevelBar";
 import StreakBar from "./components/StreakBar";
 import StreakDisplayBox from "./components/StreakDisplayBox";
@@ -8,8 +8,7 @@ const Reports = () => {
   return (
     <View>
       <View className="buffer" style={{ marginTop: 90 }} />
-      <Text style={{ textAlign: "center" }}>Test</Text>
-      <ScrollView style={{ margin: 12, height: 580 }}>
+      <ScrollView style={{ margin: 12, height: 600, borderRadius: 16 }}>
         <View style={{ height: 160 }}>
           <Image
             style={{
