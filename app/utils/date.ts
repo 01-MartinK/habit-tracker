@@ -1,4 +1,4 @@
-const days = [
+const dayNames = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -40,7 +40,15 @@ const shortenedMonths = [
 
 export function GetDay() {
   const now = new Date();
-  return days[now.getDay()];
+  return dayNames[now.getDay()];
+}
+
+export function GetMonth(): number {
+  return new Date().getMonth();
+}
+
+export function GetYear(): number {
+  return new Date().getFullYear();
 }
 
 export function GetFullDate() {
@@ -49,4 +57,16 @@ export function GetFullDate() {
   const month = now.getMonth();
   const year = now.getFullYear();
   return `${day} ${shortenedMonths[month]} ${year}`;
+}
+
+export function getDaysInMonth(month: number, year: number): Date[] {
+  const date = new Date(year, month, 1);
+  let days: Date[] = [];
+  while (date.getMonth() === month) {
+    days.push(new Date(date));
+    date.setDate(date.getDate() + 1);
+  }
+  console.log(days[0].getDay());
+
+  return days;
 }

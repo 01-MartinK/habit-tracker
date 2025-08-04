@@ -15,7 +15,12 @@ const InfoBar = () => {
             borderColor: "green",
           }}
         />
-        <Text>Level 1</Text>
+        <View>
+          <Text>Level 1</Text>
+          <Text style={{ fontSize: 12, color: "gray" }}>
+            500exp to next level
+          </Text>
+        </View>
       </View>
       <View style={{ flex: 1 }} />
       <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
