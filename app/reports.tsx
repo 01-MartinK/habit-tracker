@@ -18,7 +18,6 @@ const Reports = () => {
             }}
             source={{
               uri: "https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-flat-character-design-vector-material-png-image_13183387.png",
-              //uri: "https://static.vecteezy.com/system/resources/previews/013/209/469/non_2x/simple-flat-design-character-free-vector.jpg",
             }}
           />
         </View>
