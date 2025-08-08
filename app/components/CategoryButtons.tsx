@@ -7,11 +7,16 @@ import {
   View,
 } from "react-native";
 
-const CategoryButtons = () => {
+interface Props {
+  OnCategoryChange?: (index: number) => void;
+}
+
+const CategoryButtons = ({ OnCategoryChange }: Props) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const updateIndex = (event: GestureResponderEvent, newIndex: number) => {
     setCurrentIndex(newIndex);
+    if (OnCategoryChange) OnCategoryChange(newIndex);
   };
 
   return (
@@ -39,13 +44,13 @@ const CategoryButtons = () => {
         </Text>
       </Pressable>
       <Pressable
-        onPress={(event) => updateIndex(event, 2)}
+        onPress={(event) => updateIndex(event, -1)}
         style={[
-          currentIndex === 2 ? styles.button_active : styles.button,
+          currentIndex === -1 ? styles.button_active : styles.button,
           { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 },
         ]}
       >
-        <Text style={currentIndex === 2 ? styles.text_active : styles.text}>
+        <Text style={currentIndex === -1 ? styles.text_active : styles.text}>
           Overall
         </Text>
       </Pressable>

@@ -1,5 +1,5 @@
 import { Entypo } from "@expo/vector-icons";
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   Pressable,
@@ -16,6 +16,8 @@ const CreateHabitModal = ({
   visible: boolean;
   onClose?: () => void;
 }) => {
+  const [categorySelection, setCategorySelection] = useState<number>(0);
+
   return (
     <Modal
       animationType="slide"
@@ -48,6 +50,26 @@ const CreateHabitModal = ({
         <View style={styles.textFieldContainer}>
           <Text>Amount of time it takes</Text>
           <TextInput placeholder="60 min" keyboardType="numeric" />
+        </View>
+        <View style={{ flexDirection: "row", gap: 16 }}>
+          <Pressable
+            style={[
+              styles.button_selectable,
+              categorySelection === 0 ? styles.button_selectable_active : null,
+            ]}
+            onPress={() => setCategorySelection(0)}
+          >
+            <Text>Daily</Text>
+          </Pressable>
+          <Pressable
+            style={[
+              styles.button_selectable,
+              categorySelection === 1 ? styles.button_selectable_active : null,
+            ]}
+            onPress={() => setCategorySelection(1)}
+          >
+            <Text>Weekly</Text>
+          </Pressable>
         </View>
         <View style={{ flex: 1 }} />
         <View style={{ gap: 16 }}>
@@ -121,6 +143,15 @@ const styles = StyleSheet.create({
       height: 0,
     },
     shadowRadius: 8,
+  },
+  button_selectable: {
+    padding: 16,
+    paddingHorizontal: 48,
+    borderRadius: 8,
+    backgroundColor: "gray",
+  },
+  button_selectable_active: {
+    backgroundColor: "gainsboro",
   },
 });
 
