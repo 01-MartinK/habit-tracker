@@ -6,12 +6,20 @@ interface Props {
   username: string;
   streak: number;
   achievements: string[];
+  place: number;
   isUser?: boolean;
 }
 
-const LeaderboardItem = ({ username, streak, achievements, isUser }: Props) => {
+const LeaderboardItem = ({
+  username,
+  streak,
+  achievements,
+  isUser,
+  place,
+}: Props) => {
   return (
     <View style={[styles.container, isUser ? styles.container_user : null]}>
+      <Text>{place}th</Text>
       <Image
         style={{
           width: 48,
@@ -22,8 +30,10 @@ const LeaderboardItem = ({ username, streak, achievements, isUser }: Props) => {
         }}
       />
       <Text>{username}</Text>
-      <View style={{ flex: 1 }}>
-        <Text></Text>
+      <View style={{ flex: 1, flexDirection: "row", gap: 4 }}>
+        {achievements.map((achievement, i) => (
+          <View style={styles.dot} key={`${achievement} + ${i}`} />
+        ))}
       </View>
       <Text style={{ fontWeight: "bold", fontSize: 16 }}>{streak}</Text>
       <FontAwesome6 color="orange" name="fire" size="32" />
@@ -43,6 +53,12 @@ const styles = StyleSheet.create({
   },
   container_user: {
     backgroundColor: "#85F291",
+  },
+  dot: {
+    borderRadius: 50,
+    width: 8,
+    height: 8,
+    backgroundColor: "green",
   },
 });
 
