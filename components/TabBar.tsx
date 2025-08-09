@@ -8,7 +8,7 @@ const TabBar = ({ state, descriptors, navigation }) => {
   return (
     <View style={styles.tabbar}>
       {state.routes.map((route, index: number) => {
-        if (route.name.includes("components")) return;
+        if (route.name.includes("components") || route.name === "login") return;
         const { options } = descriptors[route.key];
 
         const label =
